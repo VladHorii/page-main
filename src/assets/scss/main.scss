@@ -525,8 +525,7 @@ section, .section {
         @include flexbox();
         flex-direction: column;
         transition: 1s;
-        &.form-active {
-        }
+
         input {
           background-color: #fff;
           border-radius: 15px;
