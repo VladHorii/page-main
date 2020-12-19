@@ -1,0 +1,34 @@
+.selectgroup-btn {
+  @include flexbox();
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  background: #122936;
+  border-radius: 20px;
+
+  button {
+    position: relative;
+    color: #000000;
+    font-weight: bold;
+    background-color: $neutral-placeholder ;
+    width: 40%;
+    border: #FFF;
+    border-radius: 20px;
+    &:hover {
+      background-color:  $border-base;
+    }
+    &.method-payment.selected {
+      background-color: $success-color;
+    }
+  }
+  &.btn-success > button {
+    background-color: $success-color;
+  }
+  &.selected {
+    background-color: $success-color;
+  }
+
+  @media screen and (max-width: $phoneWidth) {
+    font-size: 15px;
+  }
+}

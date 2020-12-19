@@ -1,0 +1,24 @@
+// header style
+.title {
+  position: sticky;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  top: 0;
+  z-index: 100;
+  h1.heading {
+    font-size: 50px;
+    text-shadow: 2px 2px 8px #313544;
+    mix-blend-mode: screen;
+    color: $mainColor;
+    transition: 0.5s;
+    cursor: default;
+    &:hover {
+      font-size: 55px;
+      text-shadow: 8px 8px 8px #FFF;
+      letter-spacing: 3px;
+    }
+  }
+}

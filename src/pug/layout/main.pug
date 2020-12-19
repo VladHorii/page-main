@@ -1,0 +1,130 @@
+include ../utils/mixins
+block variables
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8' name="viewport" content="width=device-width, initial-scale=1")
+    title #{title}
+    meta(name="description", content=description)
+    block head
+
+  body(class=pageClass)
+    .lines
+      .line
+      .line
+      .line
+      .line
+      .line
+    include ../includes/modules/header
+    
+    .wrapper
+      .mainblock
+        .mainblock__content
+          .container
+            //- .mainblock__nav
+            //-   div(class="all anim")
+            //-     div(class="left" id="tab-product")
+            //-       div(class="text") Товар
+            //-     div(class="center" id="tab-product")
+            //-       .explainer
+            //-       div(class="text" id="tab-buy") Купить
+            //-     div(class="right" id="tab-product")
+            //-       div(class="text" id="tab-auth") Авторизация
+            .content
+              div(class="products anim" id="products")
+                div(class="card" id="prod-arz")
+                  .imgBx 
+                    img(src="/assets/img/1.jpg" :alt="message" class="prod-img")
+                  .contentBx
+                    h1(class="proj-name") Arizona RP
+                    h3(class="prod-name")= "Ловля имущества"
+                    h2(class="price") ₽599.#[small 99]
+                    a(class="buy") Купить
+                    h4(class="prod-info") !{prodInfo}
+                div(class="card" id="prod-rrp")
+                  .imgBx 
+                    img(src="/assets/img/rodina.png" :alt="message" class="prod-img")
+                  .contentBx
+                    h1(class="proj-name") Rodina RP
+                    h3(class="prod-name")= "Ловля имущества"
+                    h2(class="price") ₽399.#[small 99]
+                    a(class="buy") Купить
+                    h4(class="prod-info") !{prodInfo}
+                div(class="card sale" id="prod-rrp")
+                  .imgBx 
+                    img(src="/assets/img/test.png" :alt="message" class="prod-img")
+                  .contentBx
+                    h1(class="proj-name") Test RP
+                    h3(class="prod-name")= "Тестовый товар"
+                    h2(class="price") ₽499.#[small 99]
+                    a(class="buy") Купить
+                    h4(class="prod-info") !{prodInfo}
+              
+              
+              div(class="buying-prod anim ") 
+                .container-box
+                  .info
+                    img(class="product-image" :alt="message")
+                    p(class="project-name")
+                    p(class="product-name")
+                    .price
+                      h2
+                  .payment
+                    p(class="form-title") Выберите способ оплаты
+                    input(class="payment-method" title="QIWI" type="button" id="qiwi" value="")
+                    input(class="payment-method" title="Сбер" type="button" id="sber" value="")
+                    input(class="payment-method" title="ПриватБанк" type="button" id="privatbank" value="")
+                    .requisites
+                      div(class="form-qiwi payment-form") 
+                        h3(class="form-title") Ваш ВКонтакте:
+                        input(type="text"  placeholder="Ссылка на страницу ВК" name="link_vk")
+                        //- h3(class="form-title warning") ВНИМАНИЕ! Убедитесь, что вы начали переписку с нами
+                        //- h3(class="form-title warning") Страница не найдена
+                        h3(class="form-title sucess") User: Владислав Самойленко
+
+                        iframe(width="220" height="100" 
+                        src="https://widget.qiwi.com/widgets/big-button-220x100?publicKey=48e7qUxn9T7RyYE1MVZswX1FRSbE6iyCj2gCRwwF3Dnh5XrasNTx3BGPiMsyXQFNKQhvukniQG8RTVhYm3iPv2gcnuUdW2ViHChj3oTW27Cu8T1QokhQS76orDsaGV8edBT2k36dCktvpEyMDH7G4qp7n38dyNyS1WTr9o3ToYpySJcKHsegP15pyWNxP" 
+                        allowtransparency="true" scrolling="no" frameborder="0")
+
+
+
+                      //- div(class="form-sber payment-form")
+                      //-   h3(class="form-title") Реквезиты:
+                      //-   h3(class="number") +79397549977
+                      //-   button(class="btn-copy") Копировать
+                      //-   h3(class="form-title") Комментарий к платежу:
+                      //-   h3(class="number comment") 1234567890
+                      //-   button(class="btn-copy") Копировать
+
+                      //-   button(class="check-payment") Проверить оплату
+
+                      //- div(class="form-privatbank payment-form")
+                      //-   h3(class="form-title") Реквезиты:
+                      //-   h3(class="number")  5168755902362678
+                      //-   button(class="btn-copy") Копировать
+                      //-   h3(class="form-title") Комментарий к платежу:
+                      //-   h3(class="number comment") 1234567890
+                      //-   button(class="btn-copy") Копировать
+
+                      //-   button(class="check-payment") Проверить оплату
+
+              //- anim-no-show не показывать
+
+              
+              //- div(class="buyings anim")
+              //-   form(action="" method="POST")
+              //-     label(for="" class="select-name") Выбранный продукт
+              //-     div(class="selectgroup-btn btn-success")
+              //-       button(type='button' class="product-name") Arizona RP
+
+              //-     label(for="" class="select-name") Выберите способ оплаты
+              //-     div(class="selectgroup-btn ")
+              //-       button(type='button' id='qiwi' class="method-payment") QIWI
+              //-       button(type='button' id='sber' class="method-payment") Сбер
+              //-       button(type='button' id='privatebank' class="method-payment") ПриватБанк
+
+    
+    block content
+    include ../includes/modules/footer
+    block script
