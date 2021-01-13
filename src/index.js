@@ -1,5 +1,7 @@
 // JS
 import './js/'
+import './js/button'
+import './js/anim'
 
 // SCSS
 import './assets/scss/main.scss'

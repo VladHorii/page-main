@@ -31,7 +31,7 @@ module.exports = {
   output: {
     filename: `${PATHS.assets}js/[name].[hash].js`,
     path: PATHS.dist,
-    publicPath: '/'
+    publicPath: '/'//process.env.ASSET_PATH || '/'
   },
   optimization: {
     splitChunks: {
@@ -81,7 +81,7 @@ module.exports = {
       test: /\.(png|jpg|gif|svg)$/,
       loader: 'file-loader',
       options: {
-        name: '[name].[ext]'
+        name: `[name].[ext]`
       }
     }, {
       test: /\.scss$/,
@@ -128,7 +128,7 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
-      { from: `${PATHS.src}/static`, to: '' },
+      { from: `${PATHS.src}/static`, to: `` },
     ]),
 
     // Automatic creation any html pages (Don't forget to RERUN dev server)
@@ -136,7 +136,7 @@ module.exports = {
     // best way to create pages: https://github.com/VladHorii/webpack-template/blob/master/README.md#third-method-best
     ...PAGES.map(page => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
-      filename: `./${page.replace(/\.pug/,'.html')}`
+      filename: `./${page.replace(/\.pug/, '.html')}`
     }))
   ],
 }
